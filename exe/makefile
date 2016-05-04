@@ -12,5 +12,8 @@ lcd.o : $(SRCDIR)/lcd.c $(SRCDIR)/lcd.h
 tp3.o : $(SRCDIR)/tp3.s
 	$(AS) -o tp3.o $(SRCDIR)/tp3.s
 
+exe : edl
+	mspdebug -j -d /dev/ttyUSB0 uif < debugopt
+
 clean :
 	rm *.o exe.elf
